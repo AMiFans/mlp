@@ -12,13 +12,13 @@
 
 回答此问题的障碍是可用硬件的内存限制。鉴于当前最先进的模型通常具有数亿甚至数十亿个参数，当我们尝试扩展模型时，很容易遇到这些限制。在分布式训练中，由于通信开销与模型中的参数数量成正比，因此训练速度也可能受到显着影响。我们还观察到，仅仅增加诸如 `BERT-large ` 之类的模型的隐藏层大小（Devlin et al., 2019）可能会导致性能下降。表1和图1给出了一个典型示例，在该示例中，我们将 `BERT-large` 的隐藏层的大小增加了2倍得到 `BERT-xlarge` 模型，然而该 `BERT-xlarge`  模型得到了较差的结果。 
 
-![Figure1](image\Figure1.png " 图1：BERT-large 和 BERT-xlarge（隐藏层大小比 BERT-large 大2倍）的训练损失（左）和验证集 MLM 精度（右）。 较大的模型具有较低的 MLM 精度，同时没有明显的过拟合迹象。 ")
+![Figure1](\image\Figure1.png " 图1：BERT-large 和 BERT-xlarge（隐藏层大小比 BERT-large 大2倍）的训练损失（左）和验证集 MLM 精度（右）。 较大的模型具有较低的 MLM 精度，同时没有明显的过拟合迹象。 ")
 
 <center>
 <font size="2" color="black">图1：BERT-large 和 BERT-xlarge（隐藏层大小比 BERT-large 大2倍）的训练损失（左）和验证集 MLM 精度（右）。 较大的模型具有较低的 MLM 精度，同时没有明显的过拟合迹象。</font>
 </center>
 
-![Table1](image\Table1.png " 表1：增加 BERT-large的隐藏层大小会导致在RACE上的性能变差。 ")
+![Table1](\image\Table1.png " 表1：增加 BERT-large的隐藏层大小会导致在RACE上的性能变差。 ")
 
 <center>
 <font size="2" color="black">表1：增加 BERT-large 的隐藏层大小会导致在RACE上的性能变差</font>
@@ -62,7 +62,7 @@ Dehghani et al.(2018)（`Universal Transformer,UT`）和 Bai et al.(2019)（`Dee
 
 图2显示了使用 `BERT-large` 和 `ALBERT-large` 配置的每一层输入和输出嵌入的 `L2 距离`和 `余弦相似度`（参见表2）。我们观察到，与 `BERT` 相比，`ALBERT `从一层到另一层的过渡要平滑得多。这些结果表明，权重共享对稳定网络参数有影响。尽管与 `BERT` 相比，这两个指标都有所下降，但是即使经过24层，它们也不会收敛为0。这表明 `ALBERT` 参数的解决方案空间与`DQE`发现的空间有很大不同。
 
-![Figure2](image\Figure2.png " BERT-large和ALBERT-large的每层输入和输出嵌入的L2距离和余弦相似度（以度为单位）")
+![Figure2](\image\Figure2.png " BERT-large和ALBERT-large的每层输入和输出嵌入的L2距离和余弦相似度（以度为单位）")
 
 <center>
 <font size="2" color="black">图2 BERT-large 和 ALBERT-large 的各层输入和输出嵌入的 L2距离和余弦相似度(以度表示)。</font>
@@ -78,7 +78,7 @@ Dehghani et al.(2018)（`Universal Transformer,UT`）和 Bai et al.(2019)（`Dee
 
 表2给出了BERT和ALBERT模型在超参数设置上的差异。由于以上讨论的设计选择，ALBERT模型的参数尺寸比相应的BERT模型要小得多。 
 
-![Table2](image/Table2.png)
+![Table2](\image/Table2.png)
 
 <center>
 <font size="2" color="black">表2：本文对主要的 BERT 和 ALBERT 模型的结构进行了分析</font>
